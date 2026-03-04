@@ -55,6 +55,26 @@ The **GTZAN dataset** is the most widely used public dataset for music genre rec
 - **10 genres**: blues, classical, country, disco, hiphop, jazz, metal, pop, reggae, rock
 - **Sample rate**: 22,050 Hz
 
+### Waveform Examples
+
+Different genres have distinctive waveform characteristics:
+
+<div align="center">
+  <img src="docs/images/waveforms.png" alt="Waveform Examples by Genre" width="800"/>
+  <br>
+  <em>Waveform comparison across different genres</em>
+</div>
+
+### Mel-Spectrogram Representations
+
+Mel-spectrograms reveal time-frequency patterns unique to each genre:
+
+<div align="center">
+  <img src="docs/images/mel_spectrograms.png" alt="Mel-Spectrograms by Genre" width="800"/>
+  <br>
+  <em>Mel-spectrogram representations showing frequency content over time</em>
+</div>
+
 #### Why GTZAN?
 
 - Industry standard benchmark for music genre classification
@@ -353,6 +373,14 @@ print(f"Predicted genre: {genre} ({confidence:.2%} confidence)")
 
 ### Confusion Matrix Insights
 
+#### CNN Confusion Matrix
+
+<div align="center">
+  <img src="docs/images/confusion_matrix_cnn.png" alt="CNN Confusion Matrix" width="700"/>
+  <br>
+  <em>CNN confusion matrix showing 90% overall accuracy</em>
+</div>
+
 **Common misclassifications**:
 - **Rock ↔ Metal**: Similar instrumentation, tempo, energy (expected overlap)
 - **Rock ↔ Pop**: Pop-rock fusion creates ambiguity
@@ -364,6 +392,20 @@ print(f"Predicted genre: {genre} ({confidence:.2%} confidence)")
 - **Blues**: Unique 12-bar structure and harmonic patterns
 - **Jazz**: Complex improvisation clearly identifiable
 - **Hiphop**: Distinctive vocal style
+
+#### Random Forest Baseline
+
+<div align="center">
+  <img src="docs/images/confusion_matrix_rf.png" alt="Random Forest Confusion Matrix" width="700"/>
+  <br>
+  <em>Random Forest confusion matrix (69% accuracy) - baseline comparison</em>
+</div>
+
+<div align="center">
+  <img src="docs/images/feature_importance.png" alt="Feature Importance" width="700"/>
+  <br>
+  <em>Top 20 most important features for Random Forest classification</em>
+</div>
 
 ## 🔧 Technical Details
 
@@ -407,17 +449,33 @@ print(f"Predicted genre: {genre} ({confidence:.2%} confidence)")
 
 #### Data Split
 ```
-Total: 1000 samples
-├── Training: 640 (64%)
-├── Validation: 160 (16%)
-└── Test: 200 (20%)
+Total: 3000 samples (with augmentation)
+├── Training: 2400 (80%)
+├── Validation: 600 (20%)
+└── Test: 600 (separate 20% split)
 ```
 
 #### Optimization
 - **Optimizer**: Adam (adaptive learning rate)
-- **Initial LR**: 0.001
-- **LR Schedule**: Reduce by 50% if no improvement for 5 epochs
-- **Early Stopping**: Stop if no improvement for 15 epochs
+- **Initial LR**: 0.001 → 0.0005 (reduced for stability)
+- **LR Schedule**: Reduce by 50% if no improvement for 10 epochs
+- **Early Stopping**: Stop if no improvement for 25 epochs
+- **Final convergence**: Epoch 46
+
+#### Training History
+
+<div align="center">
+  <img src="docs/images/training_history.png" alt="Training History" width="800"/>
+  <br>
+  <em>Training and validation curves showing stable convergence to 90% accuracy</em>
+</div>
+
+**Key Observations:**
+- **Epochs 1-10**: Rapid learning (20% → 60% val accuracy)
+- **Epochs 10-30**: Steady improvement (60% → 85%)
+- **Epochs 30-46**: Fine-tuning (85% → 90%)
+- **No overfitting**: Healthy train/val gap (~5-10%)
+- **Stable convergence**: No catastrophic loss explosions
 
 #### Regularization Techniques
 1. **Dropout**: Randomly disable 25-50% of neurons during training
